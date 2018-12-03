@@ -1,0 +1,11 @@
+{
+  "name": "passphrasegen",
+  "version": "1.0.0",
+  "description": "Generate a passphrae",
+  "main": "src/passphrase",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Jerod Ewert",
+  "license": "ISC"
+}
