@@ -87,8 +87,8 @@ export class PassphraseTool {
       }
     } else {
       console.log("Usage:")
-      console.log(this.toolName + " [length]")
-      console.log("Default length is 4, max is 512")
+      console.log("  " + this.toolName + " [length]")
+      console.log("  Default length is 4, max is 512")
     }
 
     let passphrase = niceware.generatePassphrase(length || 8)
