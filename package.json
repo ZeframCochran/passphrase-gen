@@ -1,11 +1,52 @@
 {
-  "name": "passphrasegen",
+  "name": "passphrase-gen",
   "version": "1.0.0",
-  "description": "Generate a passphrae",
-  "main": "src/passphrase",
-  "scripts": {
-    "test": "jest"
+  "engines": {
+    "node": ">=10.0"
   },
+  "os": [
+    "darwin",
+    "linux"
+  ],
+  "description": "Passphrase generator",
+  "scripts": {
+    "start": "babel-node src/passphrase-gen.js",
+    "build": "babel src -d dist -s --ignore *.test.js",
+    "debug:passgen": "babel-node --inspect-brk src/passphrase-gen.js",
+    "test": "jest",
+    "test:debug": "babel-node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand",
+    "deploy": "npm publish"
+  },
+  "bin": {
+    "bucket": "dist/passphrase-gen.js"
+  },
+  "files": [
+    "dist/**"
+  ],
+  "keywords": [
+    "phrase",
+    "cli"
+  ],
   "author": "Jerod Ewert",
-  "license": "ISC"
+  "license": "MIT",
+  "dependencies": {
+    "autobind-decorator": "^2.1.0",
+    "chalk": "^2.1.0",
+    "minimist": "^1.2.0",
+    "niceware": "^1.0.5",
+    "set-blocking": "^2.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.5",
+    "@babel/node": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-decorators": "^7.1.6",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/plugin-syntax-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.5",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "jest-cli": "^23.6.0"
+  }
 }
